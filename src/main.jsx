@@ -16,12 +16,18 @@ import CreateTask from './Layout/CreateTask/CreateTask';
 
 import ToDo from './Layout/ToDo/ToDo';
 import EditTask from './Layout/EditTask/EditTask';
+import PreviousTask from './Layout/PreviousTask/PreviousTask';
+import About from './Pages/About/About';
+import ContactUs from './Pages/ContactUs/ContactUs';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import UserDisplay from './Layout/UserDisplay/UserDisplay';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:"/",
@@ -34,7 +40,15 @@ const router = createBrowserRouter([
       {
         path:"signUp",
         element:<SignUp></SignUp>
-      }
+      },
+      {
+        path:"about",
+        element:<About></About>
+      },
+      {
+        path:"contact",
+        element:<ContactUs></ContactUs>
+      },
     ]
   },
   {
@@ -49,12 +63,22 @@ const router = createBrowserRouter([
       {
         path:"todo",
         element:<ToDo></ToDo>,
-        loader:()=>fetch(`http://localhost:5000/management`)
+        loader:()=>fetch(`https://task-management-platform-server-inky.vercel.app/management`)
       },
       {
         path:"edit/:id",
         element:<EditTask></EditTask>,
-        loader:({params})=>fetch(`http://localhost:5000/management/${params.id}`)
+        loader:({params})=>fetch(`https://task-management-platform-server-inky.vercel.app/management/${params.id}`)
+      },
+      {
+        path:"previousTask",
+        element:<PreviousTask></PreviousTask>,
+        loader:()=>fetch(`https://task-management-platform-server-inky.vercel.app/management`)
+      },
+      {
+        path:"user",
+        element:<UserDisplay></UserDisplay>,
+        loader:()=>fetch(`https://task-management-platform-server-inky.vercel.app/management`)
       },
     ]
   }

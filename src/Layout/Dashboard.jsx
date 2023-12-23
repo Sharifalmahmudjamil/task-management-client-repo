@@ -23,8 +23,11 @@ const Dashboard = () => {
         <div className="flex">
            
             {/* dashboard sidebar */}
+            
             <div className="w-64 min-h-screen  bg-gray-500">
+            
             <p className="text-xl text-center font-medium">DashBoard</p>
+            <h1 className="text-xl text-center font-semibold text-blue-400">Welcome, {user.displayName} </h1>
             <div className="avatar items-center gap-3">
                         <div className="w-16 rounded-full">
                             <img src={user?.photoURL} />
@@ -44,7 +47,7 @@ const Dashboard = () => {
                    
                     </li>
                 <li>
-                    <NavLink to='/dashboard/viewBioData'>
+                    <NavLink to='/dashboard/previousTask'>
                     <FaStreetView></FaStreetView>
                     See previous Tasks</NavLink>
                    
@@ -52,6 +55,12 @@ const Dashboard = () => {
                 <li>
                     <NavLink to='/dashboard/todo'>
                     TO DO</NavLink>
+                    
+                   
+                    </li>
+                  <li>
+                    <NavLink to='/dashboard/user'>
+                    User Display</NavLink>
                     
                    
                     </li>
@@ -72,12 +81,13 @@ const Dashboard = () => {
                             Home</NavLink>
                     </li>
             </ul>
-            
+           
             </div>
            
-           
+            
             {/* dashboard content */}
             <div className="flex-1">
+           
                 <Outlet></Outlet>
               
             </div>

@@ -28,7 +28,7 @@ const ToDo = () => {
           }).then((result) => {
             if (result.isConfirmed) {
            
-              fetch(`http://localhost:5000/management/${_id}`,{
+              fetch(`https://task-management-platform-server-inky.vercel.app/management/${_id}`,{
                 method: 'DELETE'
               })
               .then(res=>res.json())
@@ -59,6 +59,7 @@ const ToDo = () => {
    const draggingOver=(e)=>{
     e.preventDefault();
     console.log("drag over now");
+    
    }
 
    const dragDropped=(e)=>{

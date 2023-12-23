@@ -1,9 +1,17 @@
+import Aos from "aos";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
 const Banner = () => {
+    useEffect(()=>{
+        Aos.init()
+      },[])
     return (
         <div>
+            <div data-aos="fade-up-left">
+
+            
             <div className="hero min-h-screen " style={{ backgroundImage: 'url(https://i.ibb.co/0hnDv8w/task-management-concept-vector-24073177.jpg)' }}>
                 <div className="hero-overlay bg-opacity-50"></div>
                 <div className="hero-content text-center text-neutral-content">
@@ -16,6 +24,7 @@ const Banner = () => {
                        </Link>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );

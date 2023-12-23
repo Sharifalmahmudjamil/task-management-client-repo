@@ -33,8 +33,8 @@ const Navbar = () => {
                     <button onClick={handleLogOut} className="btn  btn-outline hover:bg-blue-400 btn-sm">LogOut</button>
                 </> :
                     <>
-                        <li className="lg:text-black "><NavLink to="/login"
-                            className={({ isActive }) => isActive ? 'btn btn-outline btn-sm' : ' btn bg-pink-500 btn-sm'}
+                        <li className="lg:text-black mx-3 "><NavLink to="/login"
+                            className={({ isActive }) => isActive ? 'btn btn-outline btn-sm' : ' btn btn-outline hover:bg-blue-400 btn-sm'}
                         >Login</NavLink></li>
                     </>
             }

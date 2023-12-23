@@ -22,7 +22,10 @@ const CreateTask = () => {
                 Description:data.Description,
                 priority:data.priority,
                 department:data.department,
-                userEmail:user?.email
+                userEmail:user?.email,
+                Name:user?.displayName,
+                Photo:user?.photoURL
+
             }
             console.log(task);
            
